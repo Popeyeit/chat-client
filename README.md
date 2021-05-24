@@ -1,5 +1,10 @@
 link app - https://chat-6f698.web.app/
 
+
+1. You have to clone the repository on your computer.
+2. Install dependencies of the project. Use for it "npm install".
+3. After when dependencies will be installed, use "npm start" in the terminal.
+
 Routers:
 
 for auth  
