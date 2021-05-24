@@ -22,7 +22,7 @@ function App() {
 
     const channel = pusher.subscribe('messages');
     channel.bind('inserted', data => {
-      dispatch(create({ ...data, email: user.email }));
+      dispatch(create(data));
     });
 
     return () => {

@@ -17,11 +17,12 @@ const Chat = () => {
   const [message, setMessage] = useState('');
   const dispatch = useDispatch();
   const messages = useSelector(state => state.messages);
+  const user = useSelector(state => state.auth.user);
   const { roomId } = useParams();
 
   const [isOpenedModal, setIsOpenedModal] = useState(false);
 
-  const openModal = id => {
+  const openModal = () => {
     setIsOpenedModal(true);
   };
   const closeModalByKey = e => {
@@ -95,7 +96,7 @@ const Chat = () => {
                 <p
                   key={message.id}
                   className={`${
-                    message?.email
+                    message?.name === user.name
                       ? styles.chat_my_message
                       : styles.chat_message
                   }`}

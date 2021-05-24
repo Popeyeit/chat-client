@@ -40,7 +40,7 @@ export const loginOperation = data => async dispatch => {
     dispatch(setLoader(true));
 
     const res = await api.requestPost('/login', data);
-    dispatch(login(res.data));
+    dispatch(login(res.data.user));
     dispatch(setToken(res.data.token));
     api.setToken(res.data.token);
   } catch (error) {

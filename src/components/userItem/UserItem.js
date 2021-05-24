@@ -69,7 +69,6 @@ export default function BadgeAvatars({ name, status, id }) {
         </StyledBadge>
         <div className={styles.login}>
           <p> {name}</p>
-          <p>last message</p>
         </div>
       </div>
     </NavLink>
