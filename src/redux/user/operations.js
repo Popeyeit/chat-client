@@ -20,15 +20,17 @@ export const registerOperation = data => async dispatch => {
     dispatch(setToken(res.data.token));
     api.setToken(res.data.token);
   } catch (error) {
+    if (error?.response?.data) {
+      dispatch(setError(error.response.data));
+      return;
+    }
     if (error?.response?.status === 409) {
       dispatch(setError('this email is already registered'));
+      return;
     }
     if (error?.response?.status === 400) {
       dispatch(setError('wrong request'));
       return;
-    }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
     }
   } finally {
     dispatch(unsetLoader(false));
@@ -48,10 +50,7 @@ export const loginOperation = data => async dispatch => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-      return;
-    }
+
     dispatch(setError('wrong login or password'));
   } finally {
     dispatch(unsetLoader(false));
@@ -81,9 +80,6 @@ export const getCurrentUserOperation = () => async (dispatch, getState) => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-    }
   } finally {
     dispatch(unsetLoader(false));
   }
@@ -100,9 +96,6 @@ export const logoutOperation = () => async dispatch => {
     if (error?.response?.status === 400) {
       dispatch(setError('wrong request'));
       return;
-    }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
     }
   } finally {
   }
@@ -125,9 +118,6 @@ export const getAllUserOperation = () => async (dispatch, getState) => {
     if (error?.response?.status === 400) {
       dispatch(setError('wrong request'));
       return;
-    }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
     }
   } finally {
     setLoader(false);

@@ -21,9 +21,6 @@ export const getMessagesByIdOperation = id => async (dispatch, getState) => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-    }
   } finally {
     dispatch(unsetLoader(false));
   }
@@ -36,9 +33,6 @@ export const createMessageOperation = item => async dispatch => {
     if (error?.response?.status === 400) {
       dispatch(setError('wrong request'));
       return;
-    }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
     }
   } finally {
   }

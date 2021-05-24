@@ -22,9 +22,6 @@ export const getRoomsOperation = () => async (dispatch, getState) => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-    }
   } finally {
     dispatch(unsetLoader(false));
   }
@@ -40,9 +37,6 @@ export const createRoomOperation = item => async dispatch => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-    }
   } finally {
   }
 };
@@ -57,9 +51,6 @@ export const getRoomByIdOperation = id => async dispatch => {
       dispatch(setError('wrong request'));
       return;
     }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
-    }
   } finally {
   }
 };
@@ -72,9 +63,6 @@ export const changeRoomOperation = (id, lastMessage) => async dispatch => {
     if (error?.response?.status === 400) {
       dispatch(setError('wrong request'));
       return;
-    }
-    if (error?.response?.status === 500) {
-      dispatch(setError('server problems'));
     }
   } finally {
   }
