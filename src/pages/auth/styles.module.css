@@ -1,0 +1,33 @@
+.page {
+  padding: 40px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: linear-gradient(120deg, #f2f2f2 50%, #eaeaea 50%);
+}
+.title_wrapper {
+  display: none;
+}
+.page form {
+  max-width: 420px;
+}
+
+@media (min-width: 768px) {
+  .title_wrapper {
+    width: 40%;
+    display: block;
+  }
+  .title_wrapper img {
+    margin-bottom: 40px;
+  }
+  .page {
+    justify-content: space-between;
+  }
+
+  .page form {
+    width: 40%;
+    max-width: 620px;
+  }
+}

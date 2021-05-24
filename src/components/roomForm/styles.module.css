@@ -1,0 +1,16 @@
+.form h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.form div:not(:last-child) {
+  margin-bottom: 20px;
+}
+.form input {
+  padding: 6px;
+}
+
+.error {
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}

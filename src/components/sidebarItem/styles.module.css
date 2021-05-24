@@ -1,0 +1,24 @@
+.sidebar_item {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar_info h2 {
+  margin-bottom: 6px;
+}
+.sidebar_info {
+  color: black;
+  width: 50%;
+}
+
+.active .sidebar_info {
+  color: #303fff;
+}
+
+@media (min-width: 768px) {
+  .avatar_wrapper {
+    display: block;
+  }
+}

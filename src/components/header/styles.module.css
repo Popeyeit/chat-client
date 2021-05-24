@@ -1,0 +1,65 @@
+.header {
+  width: 100%;
+  border-bottom: 2px solid grey;
+  min-height: 80px;
+  padding: 10px 30px;
+}
+.user_wrapper {
+  padding: 20px 0;
+  display: flex;
+  align-content: flex-start;
+}
+.header > div {
+  width: 30%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: flex-end;
+}
+.header {
+  display: flex;
+  align-items: center;
+}
+.header > div p {
+  width: 100%;
+  text-align: right;
+}
+
+.logout_btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 6px;
+}
+
+.header .header_btn_wrapper {
+  margin-left: 0;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 500px;
+}
+.header .header_btn_wrapper button {
+  width: 80%;
+  height: 50px;
+  border-radius: 6px;
+  max-width: 260px;
+}
+.header .header_btn_wrapper button:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .user_wrapper {
+    padding: 0;
+  }
+  .header .header_btn_wrapper button:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .header .header_btn_wrapper button {
+    width: 240px;
+  }
+}
